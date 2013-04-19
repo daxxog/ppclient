@@ -20,6 +20,8 @@ Usage
 var Print = require('ppclient'),
     fs = require('fs');
 
-Print.file('example.pdf');
-Print.stream(fs.createReadStream('example.pdf'));
+var print = Print(host, port);
+
+print.file('example.pdf');
+print.stream(fs.createReadStream('example.pdf'));
 ```

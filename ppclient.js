@@ -30,15 +30,15 @@
     };
     
     Print.prototype.file = function(fn) {
-        var r = request.post(this.base + '/print');
-        r.form().append('pdf', fs.createReadStream(fn));
-        
-        return r;
+        return this.stream(fs.createReadStream(fn));
     };
     
-    Print.prototype.stream = function(stream) {
+    Print.prototype.stream = Print.prototype.buffer = Print.prototype.data = function(mixed, opt) {
         var r = request.post(this.base + '/print');
-        r.form().append('pdf', stream);
+        r.form().append('pdf', mixed, (typeof opt == 'object') ? opt : {
+            filename: 'print.pdf',
+            contentType: 'application/pdf',
+        });
         
         return r;
     };

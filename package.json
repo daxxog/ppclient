@@ -3,7 +3,7 @@
     "description" : "(P)df (P)rint (CLIENT)",
     "homepage"    : "https://github.com/daxxog/ppclient",
     "main"        : "ppclient.js",
-    "version"     : "0.0.2",
+    "version"     : "0.0.3",
     "engines": { "node" : ">=0.7.0" },
     "maintainers": [{
         "name"  : "David Volm",
